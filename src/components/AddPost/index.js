@@ -24,10 +24,10 @@ function AddPost() {
 	}
 
 	return (
-		<div>
+		<div className="container" >
 			<form onSubmit={handleSubmit}>
 				<div className="mb-3">
-					<label for="nome" class="form-label">
+					<label for="nome" className="form-label">
 						<strong>Nome</strong>
 					</label>
 					<input
@@ -53,9 +53,9 @@ function AddPost() {
 						onChange={handleAddPost}
 					/>
 				</div>
-				<div class="form-floating">
+				<div className="form-floating">
 					<textarea
-						class="form-control"
+						className="form-control"
 						placeholder="Leave your post here"
 						id="post"
 						style={{height: '100px'}}

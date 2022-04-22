@@ -4,22 +4,30 @@ import Navbar from "./components/Navbar/index";
 import Feed from "./components/Feed";
 import AddPost from "./components/AddPost";
 import "./App.css";
+import PostDetail from "./pages/PostDetail/index";
+import HelpDetail from "./pages/HelpDetail";
+import Home from "./pages/Home";
+
+
+
 
 function App() {
 	return (
-	<div >
-    <Navbar />
-    <div className= "organizacao">
-    <div style={{width: '600px'}}>
-    <AddHelp />
-    <AddPost />
-    </div>
+		<div>
     <div>
-    <Feed />
-    </div>
-    </div>
-
-  </div>
+			<Navbar />
+     
+			
+				
+      </div>
+      	<Routes>
+          <Route path="/" element={<Home/>}/>
+					<Route path="/feed" element={<>	<AddHelp /><AddPost /><Feed /></>} />
+					<Route path="/post-detail/:postId" element={<PostDetail />} />
+          <Route path="/help-detail/:helpId" element={<HelpDetail />} />
+				</Routes>
+			
+		</div>
 	);
 }
 

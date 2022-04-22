@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 
 function AddHelp() {
-
+	
     const [addform, setAddForm] = useState({
         name: "",
         email: "",
@@ -15,9 +15,11 @@ function AddHelp() {
 
     function handleAddHelp(e){
         setAddForm({ ...addform, [e.target.name]: e.target.value });
+		
     }
-
+	
     function handleSubmit(e) {
+		
         e.preventDefault();
     
         axios.post("https://ironrest.herokuapp.com/adicionarHelp", addform);
@@ -27,6 +29,7 @@ function AddHelp() {
           email: "",
           text: "",
         });
+		
       }
     
 
@@ -35,10 +38,10 @@ function AddHelp() {
 
 
     return (  
-        <div >
-			<form onSubmit={handleSubmit}>
+        <div className="container">
+			<form onSubmit={handleSubmit} >
 				<div className="mb-3">
-					<label htmlFor="nome" class="form-label">
+					<label htmlFor="nome" className="form-label">
 					<strong>Nome</strong>
 					</label>
 					<input
@@ -65,20 +68,20 @@ function AddHelp() {
                         onChange={handleAddHelp}
 					/>
 				</div>
-				<div class="form-floating">
+				<div  className="form-floating">
 					<textarea
-						class="form-control"
+						className="form-control"
 						placeholder="Ask for help here"
-						id="text"
+						id="post"
 						style={{height: '100px'}}
                         name="text"
 						value={addform.text}
 						onChange={handleAddHelp}
 					></textarea>
-					<label style={{ opacity : '0.5' }} for="post">Write help message!</label>
+					<label style={{ opacity : '0.5' }} htmlFor="post">Write help message!</label>
 				</div>
            
-				<button type="submit" className="btn btn-primary m-3">
+				<button  type="submit" className="btn btn-primary m-3">
 					AskHelp!
 				</button>
 			</form>

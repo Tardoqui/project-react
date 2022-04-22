@@ -1,24 +1,17 @@
+import "./style.modules.css";
 
-
-
-
-
- function Navbar() {
+function Navbar() {
 	return (
-		<nav class="navbar navbar-light bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">
-					<img
-						src="../../assets/icone.png"
-						alt=""
-						width="30"
-						height="24"
-						class="d-inline-block align-text-top"
-					/>
-					Bootstrap
-				</a>
+		<div className="navbar-text-align">
+			<div class="">
+				<div class="">
+					<h3 class="card-title">Forum!</h3>
+					<p class="card-text">
+						In this forum you can post your opportunities and ask for any kind of Help! 
+					</p>
+				</div>
 			</div>
-		</nav>
+		</div>
 	);
 }
 
